@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+              .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+        .header .heading {
+            font-size: 100px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .card-container {
+           margin-top: 310px ;
+           margin-left: 50px;
+           margin-right: 50px;
+           min-width: 800px;   
+           min-height: 500px;
+           font-family: Arial, sans-serif;
+        }
+        .volunteer-card {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin-bottom: 30px;
+            min-height: 300px;
+            border: 4px solid #ffdc00;
+            border-radius: 15px;
+            padding: 2rem;
+            
+        }
+       
+        .volunteer-card .card-body {
+            flex: 1;
+            padding-left: 15px;
+        }
+        .grey-2 {
+    position: fixed; /* Fix the bar in place */
+    bottom: 0; /* Align it to the bottom of the viewport */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans the full width */
+    height: 130px; /* Keep its height */
+    background-color: rgb(202, 200, 200); /* Background color */
+    border: 1px solid #333; /* Border */
+    border-radius: 0; /* Remove border radius to match bottom alignment */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Space evenly between images */
+    padding: 0 20px; /* Padding */
+    z-index: 9999; /* High z-index to ensure it appears above other elements */
+}
+.grey-2 img {
+    width: 75px; /* Width of the images */
+    height: 75px; /* Height of the images */
+    border-radius: 10px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensures images are well-fitted */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 15px;
+}
+
+.grey-2 img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif;">
+
+    <!-- Back Icon and Heading -->
+    <div class="header">
+        <div style="position:fixed;align-items: left; margin: 40px; margin-right: 900px;">
+            <a href="home (1).html"> <img src="./img/back.png" width="60px"> </a>
+         </div>
+        <h1 class="heading my-5">Volunteer</h1>
+    </div> 
+    <!---jobs listing-->
+    <div class="card-container" style="padding-bottom: 50px;">
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Tagging Stray Dogs for Identification</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;"> Hosted by: PAWS Mumbai. Location: Powai</h2>
+                    <h4 class="card-text">Activity: Volunteers are tasked with tagging and reflecting collars on stray dogs in the Powai area to improve their visibility and ensure easy identification for future vaccination and feeding drives.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">First-Aid and Rescue Assistance</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: Animals Matter to Me (AMTM). Location: Andheri East </h2>
+                    <h4 class="card-text">Activity: Volunteers are trained to administer basic first aid to injured stray animals and assist in transporting animals to shelters or clinics for advanced treatment.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Stray Dog Vaccination Camp</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: In Defence of Animals (IDA), Mumbai. Location: Malad</h2>
+                    <h4 class="card-text">Activity: Volunteers assist in organizing stray dog vaccination camps in Malad by bringing dogs to the camp, calming them during vaccinations, and recording their details for follow-ups.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Adoption Drive Assistant</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: World For All Animal Care and Adoptions. Location: Juhu </h2>
+                    <h4 class="card-text">Activity: Volunteers help organize adoption drives, preparing animals, speaking to potential adopters, and ensuring the adoption process runs smoothly.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Feeding Stray Animals</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: PAWS Mumbai. Location: Mulund East </h2>
+                    <h4 class="card-text">Activity: Join a team to distribute food and water to stray dogs and cats in the area. Volunteers also educate locals about feeding strays responsibly.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Event: Shelter Enrichment Day</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: BSPCA Mumbai. Location: Parel </h2>
+                    <h4 class="card-text">Activity: Spend a day at the shelter enriching the lives of rescued animals by playing with them, helping clean their enclosures, and donating or creating toys for mental stimulation.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Stray Animal Tagging and Tracking</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: World For All Animal Care and Adoptions. Location: Powai</h2>
+                    <h4 class="card-text">Activity: Volunteers attach reflective collars to stray dogs to improve their visibility at night and help track their movements for follow-up care.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Community Awareness Workshop</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: Save Our Strays (SOS).Location: Dadar West</h2>
+                    <h4 class="card-text">Activity: Help organize workshops to educate the community on caring for stray animals, promoting responsible feeding, and understanding animal behavior.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <div class="card volunteer-card">
+            <div class="card-body d-flex align-items-top">
+                <div class="flex-grow-1">
+                    <h1 class="card-title" style="font-weight: 600;">Tagging Stray Dogs for Identification</h1>
+                    <h2 class="card-title mb-3" style="width: 70%;">Hosted by: PAWS Mumbai. 
+                        Location: Powai</h2>
+                    <h4 class="card-text">Activity: Volunteers are tasked with tagging and reflecting collars on stray dogs in the Powai area to improve their visibility and ensure easy identification for future vaccination and feeding drives.</h4>
+                </div>
+                <a href="https://www.example-ngo.com" class="btn p-0 m-0"><svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                  </svg></a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+<!--Bottom Bar-->
+<div class="grey-2">
+    <a href="home (1).html"> <img src="img/home-svgrepo-com.png" alt="Icon 1" style="margin-bottom: 5px;"> </a>
+    <a href="messagefinal.html"> <img src="img/messages-svgrepo-com.png" alt="Icon 2" style="margin-bottom: 2px;"> </a>
+    <a href="emergencyfinal.html"> <img src="img/Artboard 4.png" alt="Icon 3" style="width: 150px; height: 150px; margin-bottom: 90px;"> <!-- This image will now be 150x150px --> </a>
+    <a href="questionsfinal.html"> <img src="img/headset-mic-1-svgrepo-com.png" alt="Icon 4"> </a>
+    <a href="profile.html"> <img src="img/profile-round-1342-svgrepo-com.png" alt="Icon 5" style="width: 60px; height: 60px;"> <!-- Resized to 60x60px --> </a>
+ </div>
+ 
+</body>
+</html>

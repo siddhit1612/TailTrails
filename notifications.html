@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+    
+    .container-fluid {
+    height: 100vh; /* Full viewport height */
+}
+.header button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+.card {
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.card-header {
+    padding: 40px;
+    background-color: #f8f9fa; /* Light background */
+}
+
+.card-body {
+    padding: 50px;
+    font-size: 30px;
+}  
+.card-text {
+    font-size: 30px;
+}
+.card-title {
+    font-size: 45px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif;">
+
+    <!-- Back Icon and Heading -->
+    <div class="header">
+        <button class="back-button" onclick="history.back()" style="margin: 5rem;"><a href = "home (1).html" ><img src = "img/back.png"></a></button>
+    </div>
+    
+
+    <div class="container-fluid h-100 d-flex flex-column align-items-center justify-content-center">
+        <div class="card w-75 h-50">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <button class="btn btn-link p-0"><i class="bi bi-arrow-left"></i></button>
+                <h5 class="card-title">Notifications <span class="badge bg-warning">4</span></h5>
+                <a href="#" class="btn btn-link p-0">View all</a>
+            </div>
+            <div class="card-body">
+                <br>
+                <p class="card-text">You have a new message from Yoda NGO (Andheri)</p>
+                <br>
+                <p class="card-text">You have a new message from World for All NGO (Borivali)</p>
+                <br>
+                <p class="card-text">You have a new message from Animals Matter to Me NGO (Dadar)</p>
+                <br>
+                <p class="card-text">You have a new message from ABC</p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

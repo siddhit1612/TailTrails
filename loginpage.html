@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Account Set Up 1</title>
+   <style>
+       body {
+       font-family: Arial, sans-serif;
+       margin-left: 50px;
+   }
+
+
+   /* Style for the input box */
+   .input-container {
+       width: 1000px;
+       height: 100px;
+       margin-top: 10px; /* Reduced margin-top to bring input box closer */
+   }
+
+
+   .styled-input {
+       width: 100%; /* Full width of the container */
+       height: 75px; /* Adjust height */
+       border-radius: 10px; /* Rounded corners */
+       border: 1px solid black; /* Black border */
+       padding: 0 15px; /* Padding inside the box */
+       font-size: 30px; /* Font size */
+       color: #333; /* Text color */
+       box-sizing: border-box; /* Include padding in width */
+       outline: none; /* Remove outline on focus */
+   }
+
+
+   .styled-input::placeholder {
+       color: #888; /* Grey placeholder text */
+       font-style: italic; /* Optional: Italic placeholder */
+   }
+
+
+   .styled-input:focus {
+       border-color: #555; /* Slightly darker border on focus */
+   }
+
+
+   h4 {
+       font-size: 40px;
+       margin-bottom: 10px; /* Reduced margin-bottom for less gap */
+   }
+
+	    h6 {
+       margin-left: 300px;color:black;font-size: 50px;
+       margin-bottom: 10px; /* Reduced margin-bottom for less gap */
+   }
+
+   .next-button {
+           margin-top: 150px;
+           padding: 10px 20px;
+           font-size: 50px;
+           background-color: #ffdc00;
+           color: black;
+           border: none;
+           border-radius: 15px;
+           cursor: pointer;
+           margin-left: 420px;
+       }
+
+
+       .next-button:hover {
+           background-color: #D3B600;
+       }
+      
+   </style>
+</head>
+
+
+<body>
+   <div style="margin-top: 40px;">
+       <a href="welcomepage.html" style="text-decoration: none;">
+      <img src="img/back.png" width="60px">
+   </a>
+   </div>
+
+
+   <div>
+       <h1 style="font-size: 100px;">Log In</h1>
+   </div>
+
+
+   <div>
+       <h4> Email </h4>
+   </div>
+
+
+   <div class="input-container">
+     <input type="text" class="styled-input" placeholder="What's your email address">
+   </div>
+
+
+   <div>
+       <h4> Password </h4>
+   </div>
+
+
+   <div class="input-container">
+     <input type="text" class="styled-input" placeholder="Put a password to your account">
+   </div>
+
+
+
+   <!-- Next Button -->
+   <a href="home (1).html" style="text-decoration: none;">
+    <button class="next-button" onclick="goToNextPage()">Log in</button>
+ </a> 
+	
+	<div>
+       <a href="forgotpassword.html" style="text-decoration: none;">
+      <h6> Forgot Password?</h6>
+   </a> 
+   </div>
+
+
+
+<script>
+       function goToNextPage() {
+           // Replace this URL with the actual URL of the next page
+           window.location.href = "home.html";
+       }
+   </script>
+</body>
+
+
+</html>

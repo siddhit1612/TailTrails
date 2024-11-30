@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Pop-Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 2532px; /* Set height to match iPhone 13 */
+            width: 1170px; /* Set width to match iPhone 13 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Hide scrollbars */
+        }
+        .popup {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 1200px;
+            position: relative;
+        }
+        .popup-header {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .popup .form-group {
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+        .popup .btn {
+            background-color: #ffc107;
+            color: black;
+            font-weight: bold;
+            width: 100%;
+            font-size: 30px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .close-btn {
+            position: absolute;
+            top: 40px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Trigger Button -->
+    <a href="#" id="popup-trigger" class="btn btn-primary">Open Emergency Pop-Up</a>
+
+    <!-- Overlay and Pop-Up -->
+    <div class="overlay" id="popup-overlay">
+        <div class="popup">
+            <button class="close-btn" id="close-popup">&times;</button>
+            <div class="popup-header">EMERGENCY</div>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="animalType">Animal Type</label>
+                    <select class="form-control" id="animalType">
+                        <option>Select Animal Type</option>
+                        <!-- Add options here -->
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="problemFaced">Problem Faced</label>
+                    <select class="form-control" id="problemFaced">
+                        <option>Select Problem Faced</option>
+                        <!-- Add options here -->
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="uploadPhoto">Upload Photo</label>
+                    <input type="file" class="form-control-file" id="uploadPhoto">
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn">Next</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to handle the pop-up
+        document.getElementById('popup-trigger').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('popup-overlay').style.display = 'flex';
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .back-arrow img {
+      margin-left: 20px; /* Added margin to move image to the right */
+      width: 30px; /* You can adjust the size of the image */
+      height: auto;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 10px;
+    }
+
+    .header-title {
+  font-size: 7vw; /* Increased font size */
+  font-weight: bold;
+  margin-left: 5%; /* Decreased left margin to move the text slightly to the left */
+  margin-right: 5%; /* Retain right margin */
+  text-align: center;
+}
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .message-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .chat-bubble {
+      max-width: 75%; /* Adjust this if needed to control the bubble width */
+      margin: 10px 2%;
+      padding: 8px;
+      border-radius: 20px;
+      font-size: 3vw;
+      line-height: 1.5;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-bubble.user {
+      align-self: flex-end;
+      text-align: right;
+      background-color: rgb(168, 164, 164);
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    .chat-bubble.reply {
+      align-self: flex-start;
+      text-align: left;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    .footer {
+      position: relative;
+      background-color: #ddd;
+      padding: 10px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px; /* Added bottom margin */
+    }
+
+    .message-input {
+      position: absolute;
+      top: -150px; /* Reduce the value to raise the box higher */
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 5vw;
+      background-color: white;
+    }
+
+    .exclamation {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 5vw;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 10px;
+      font-size: 5vw;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin: 0 5px;
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+    .grey-2 {
+    position: fixed; /* Fix the bar in place */
+    bottom: 0; /* Align it to the bottom of the viewport */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans the full width */
+    height: 130px; /* Keep its height */
+    background-color: rgb(202, 200, 200); /* Background color */
+    border: 1px solid #333; /* Border */
+    border-radius: 0; /* Remove border radius to match bottom alignment */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Space evenly between images */
+    padding: 0 20px; /* Padding */
+    z-index: 9999; /* High z-index to ensure it appears above other elements */
+}
+.grey-2 img {
+    width: 75px; /* Width of the images */
+    height: 75px; /* Height of the images */
+    border-radius: 10px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensures images are well-fitted */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 15px;
+}
+
+.grey-2 img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <div class="back-arrow">
+      <img src="img/back.png" alt="Back Arrow"> <!-- Changed from text to image -->
+    </div>
+    <div class="profile-header">
+      <div class="header-title">World for All</div>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <div class="message-box">
+      <div class="chat-bubble user">Hey! Can I know the dates for the event? Looking forward to it...</div>
+      <div class="chat-bubble reply">Hello there! Our event will be taking place in Mumbai from 24th to 26th January, 2025.</div>
+      <div class="chat-bubble user">Okay!</div>
+      <div class="chat-bubble user">Thank you</div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <input type="text" class="message-input" placeholder="Message...">
+    <div class="exclamation">!</div>
+    <!--Bottom Bar-->
+<div class="grey-2">
+  <a href="home (1).html"> <img src="img/home-svgrepo-com.png" alt="Icon 1" style="margin-bottom: 5px;"> </a>
+  <a href="messagefinal"> <img src="img/messages-svgrepo-com.png" alt="Icon 2" style="margin-bottom: 2px;"> </a>
+  <a href="emergencyfinal.html"> <img src="img/Artboard 4.png" alt="Icon 3" style="width: 150px; height: 150px; margin-bottom: 90px;"> <!-- This image will now be 150x150px --> </a>
+  <a href="questionsfinal.html"> <img src="img/headset-mic-1-svgrepo-com.png" alt="Icon 4"> </a>
+  <a href="profile.html"> <img src="img/profile-round-1342-svgrepo-com.png" alt="Icon 5" style="width: 60px; height: 60px;"> <!-- Resized to 60x60px --> </a>
+</div>
+  </div>
+</body>
+</html>

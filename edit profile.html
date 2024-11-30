@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .left-aligned-image {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            left: 20px; /* Align to the left of the page */
+            width: 75px;
+            height: 75px;
+        }
+
+        h1 {
+            font-size: 75px;
+            margin-top: 100px; /* 100px gap from the image */
+            text-align: center;
+        }
+
+        .center-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: black;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .change-profile {
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .change-profile:hover {
+            text-decoration: underline;
+        }
+
+        .options {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .options button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Input Fields */
+        .input-section {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .input-section label {
+            font-size: 40px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .input-container input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 8px;
+            font-size: 30px;
+            font-style: italic; /* Optional: Italic placeholder */
+            height: 100px;
+        }
+
+        .input-container input::placeholder {
+            color: #888;
+        }
+
+        .input-container img {
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Next Button */
+        .next-button {
+            display: inline-block;
+            background-color: #FFDC00;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 50px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 100px;
+            width: 150px;
+            height: 75px;
+        }
+
+        .next-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+     <!-- Back Button -->
+    <div style="position: absolute; top: 20px; left: 20px;">
+        <a href=""> 
+            <img src="img/back.png" width="60px" alt="Back">
+        </a>
+    </div>
+     <div class="profile-section">
+         <div>
+             <h1 style="font-size: 90px;">Edit Profile</h1>
+         </div>
+
+        <div class="center-image">
+            <img src="img/profile pic/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="Centered Image">
+        </div>
+
+        <hr>
+
+        <p class="change-profile" onclick="toggleOptions()">Change Profile Picture</p>
+        <div class="options">
+            <button onclick="alert('Upload photo clicked')">Upload photo from the device</button>
+            <button onclick="alert('Take a photo clicked')">Take a photo</button>
+        </div>
+    </div>
+
+    <div class="input-section">
+        <label for="name"><b>Name</b></label>
+        <div class="input-container">
+            <input type="text" id="name" placeholder="What is your name?">
+            <img src="img/pencil.png" alt="Edit Icon">
+        </div>
+
+        <label for="email"><b>Email</b></label>
+        <div class="input-container">
+            <input type="email" id="email" placeholder="name@gmail.com">
+            <img src="img/pencil.png" alt="Edit Icon">
+        </div>
+
+        <label for="phone"><b>Phone No.</b></label>
+        <div class="input-container">
+            <input type="tel" id="phone" placeholder="1234567890">
+            <img src="img/pencil.png" alt="Edit Icon">
+        </div>
+    </div>
+
+    <button class="next-button" onclick="goToNextPage()">Done</button>
+
+    <script>
+        function toggleOptions() {
+            const options = document.querySelector('.options');
+            options.style.display = options.style.display === 'none' || options.style.display === '' ? 'block' : 'none';
+        }
+
+        function goToNextPage() {
+            window.location.href = 'profile.html'; // Replace with your target page URL
+        }
+    </script>
+</body>
+</html>

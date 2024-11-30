@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            max-width: 100px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid black;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            border: 1px solid grey;
+            background-color: white;
+            color: grey;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+        .button-group button.active {
+            background-color: grey;
+            color: white;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .images img {
+            max-height: 400px; /* Adjust proportionally if required */
+            max-width: calc(800px / 2 - 10px); /* 800px wide with 10px gap */
+            width: auto;
+            height: auto;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .section img {
+            max-width: 20px;
+        }
+        .section a {
+            text-decoration: none;
+        }
+        p{
+            font-size: 30px;
+        }
+        .icon-large {
+    min-width: 60px; /* Adjust the width as needed */
+    height: auto; /* Maintain proportional scaling */
+}
+.grey-2 {
+    position: fixed; /* Fix the bar in place */
+    bottom: 0; /* Align it to the bottom of the viewport */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans the full width */
+    height: 130px; /* Keep its height */
+    background-color: rgb(202, 200, 200); /* Background color */
+    border: 1px solid #333; /* Border */
+    border-radius: 0; /* Remove border radius to match bottom alignment */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Space evenly between images */
+    padding: 0 20px; /* Padding */
+    z-index: 9999; /* High z-index to ensure it appears above other elements */
+}
+.grey-2 img {
+    width: 75px; /* Width of the images */
+    height: 75px; /* Height of the images */
+    border-radius: 10px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensures images are well-fitted */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 15px;
+}
+
+.grey-2 img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h3 style="font-size: 40px; margin-bottom: 5px;">Welcome,</h3>
+            <h1 style="font-size: 60px;">ABC XYZ</h1>
+        </div>
+        <img src="img/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" alt="User Image">
+    </div>
+    <hr>
+    <h3 style="font-size: 25px; color:#333;">My Dashboard</h3>
+    <div class="button-group">
+        <button onclick="activateButton(this)"  style="font-size: 20px;">7 Days</button>
+        <button onclick="activateButton(this)" style="font-size: 20px;">1 Month</button>
+        <button onclick="activateButton(this)" style="font-size: 20px;">1 Year</button>
+    </div>
+    <div class="images">
+        <img src="img/profile page-01.png" alt="Image 1">
+        <img src="img/profile page-02.png" alt="Image 2">
+    </div>
+    <div class="images">
+        <img src="img/profile page-03.png" alt="Image 3">
+        <img src="img/profile page-04.png" alt="Image 4">
+    </div>
+    <hr>
+    <div class="section">
+        <p>Edit Profile</p>
+        <a href="edit profile.html"><img img class="icon-large" src="img/icons8-greater-than-100.png" alt="Edit"></a>
+    </div>
+    <div class="section">
+        <p>Upcoming Activities</p>
+        <a href="activitiesfinal.html"><img class="icon-large" src="img/icons8-greater-than-100.png" alt="Activities"></a>
+    </div>
+    <div class="section">
+        <p>Favourites</p>
+        <a href="favourites.html" n ><img img class="icon-large" src="img/icons8-greater-than-100.png" alt="Favourites"></a>
+    </div>
+    <hr>
+    <div class="section">
+        <p>Settings</p>
+        <a href="settings.html"><img class="icon-large" src="img/icons8-greater-than-100.png" alt="Settings"></a>
+    </div>
+
+    <script>
+        function activateButton(selectedButton) {
+            const buttons = document.querySelectorAll('.button-group button');
+            buttons.forEach(button => button.classList.remove('active'));
+            selectedButton.classList.add('active');
+        }
+    </script>
+    <!--Bottom Bar-->
+    <div class="grey-2">
+        <a href="home (1).html"> <img src="img/home-svgrepo-com.png" alt="Icon 1" style="margin-bottom: 5px;"> </a>
+        <a href="messagefinal.html"> <img src="img/messages-svgrepo-com.png" alt="Icon 2" style="margin-bottom: 2px;"> </a>
+        <a href="emergencyfinal.html"> <img src="img/Artboard 4.png" alt="Icon 3" style="width: 150px; height: 150px; margin-bottom: 90px;"> <!-- This image will now be 150x150px --> </a>
+        <a href="questionsfinal.html"> <img src="img/headset-mic-1-svgrepo-com.png" alt="Icon 4"> </a>
+        <a href="profile.html"> <img src="img/profile-round-1342-svgrepo-com.png" alt="Icon 5" style="width: 60px; height: 60px;"> <!-- Resized to 60x60px --> </a>
+     </div>
+</body>
+</html>

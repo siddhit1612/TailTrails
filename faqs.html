@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faqs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-left: 20px;
+        }
+
+        /* Input container styling */
+        .input-container {
+            position: relative;
+            width: 1100px;
+            height: 75px;
+            margin: 40px 15px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            font-size: 30px;
+        }
+
+        .input-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .styled-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 30px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .styled-input::placeholder {
+            color: #888;
+        }
+
+        /* Dropdown options styling */
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .dropdown-options div {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .dropdown-options div:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Style for the box */
+        .qa-box {
+            width: 900px;
+            height: auto;
+            margin: 40px auto;
+            border: 5px solid #FFDC00;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the question */
+        .qa-box .question {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        /* Style for the answer */
+        .qa-box .answer {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+        .grey-2 {
+    position: fixed; /* Fix the bar in place */
+    bottom: 0; /* Align it to the bottom of the viewport */
+    left: 0; /* Align it to the left edge */
+    width: 100%; /* Ensure it spans the full width */
+    height: 130px; /* Keep its height */
+    background-color: rgb(202, 200, 200); /* Background color */
+    border: 1px solid #333; /* Border */
+    border-radius: 0; /* Remove border radius to match bottom alignment */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Space evenly between images */
+    padding: 0 20px; /* Padding */
+    z-index: 9999; /* High z-index to ensure it appears above other elements */
+}
+.grey-2 img {
+    width: 75px; /* Width of the images */
+    height: 75px; /* Height of the images */
+    border-radius: 10px; /* Optional: rounded corners */
+    object-fit: cover; /* Ensures images are well-fitted */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    margin-bottom: 15px;
+}
+
+.grey-2 img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 40px;">
+        <a href="home (1).html"> <img src="img/back.png" width="60px"> </a>
+    </div>
+
+    <!-- Input container -->
+    <div class="input-container">
+        <img src="img/search-svgrepo-com.png" alt="Question Icon" style="width: 30px; height: 30px; margin-right: 20px;">
+        <input type="text" class="styled-input" placeholder="What’s your question?" id="questionInput" onfocus="showDropdown()" onblur="hideDropdown()">
+        <div class="dropdown-options" id="dropdownOptions">
+            <div onclick="selectOption('Can I give my dog human food?')">Can I give my dog human food?</div>
+            <div onclick="selectOption('How can I tell if my dog has allergies?')">How can I tell if my dog has allergies?</div>
+            <div onclick="selectOption('What’s the best diet for a senior dog?')">What’s the best diet for a senior dog?</div>
+            <div onclick="selectOption('What are the signs of a heart condition in dogs?')">What are the signs of a heart condition in dogs?</div>
+            <div onclick="selectOption('How do I introduce a new pet to my dog?')">How do I introduce a new pet to my dog?</div>
+        </div>
+    </div>
+
+    <script>
+        // Show dropdown when input is focused
+        function showDropdown() {
+            document.getElementById('dropdownOptions').style.display = 'block';
+        }
+
+        // Hide dropdown when input loses focus
+        function hideDropdown() {
+            setTimeout(() => {
+                document.getElementById('dropdownOptions').style.display = 'none';
+            }, 200); // Delay to allow click on option
+        }
+
+        // Fill input with selected option
+        function selectOption(option) {
+            document.getElementById('questionInput').value = option;
+        }
+    </script>
+
+    <!-- QA Boxes -->
+    <div class="qa-box">
+        <div class="question">Q: What should I do if my dog is choking?</div>
+        <div class="answer">
+            A: Check if you can safely remove the object with your fingers. If not, perform the Heimlich maneuver by applying pressure to the abdomen just behind the ribcage. Call a vet immediately.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How can I prevent my dog from choking?</div>
+        <div class="answer">
+            A: Always supervise your dog while eating, provide appropriate-sized chew toys, and avoid giving them small or hard objects they could swallow.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What are the signs of choking in a dog?</div>
+        <div class="answer">
+            A: Signs include difficulty breathing, pawing at the mouth, gagging, coughing, or blue-tinged gums. Seek immediate assistance if you notice these symptoms.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What should I do if my dog eats chocolate?</div>
+        <div class="answer">
+            A: Chocolate is toxic to dogs. Immediately contact a vet. The severity depends on the amount and type of chocolate ingested.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How do I know if my dog is in pain?</div>
+        <div class="answer">
+            A: Signs include whimpering, limping, reluctance to move, changes in behavior, and loss of appetite. Consult your vet if you're concerned.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What can I do if my dog is vomiting?</div>
+        <div class="answer">
+            A: If your dog vomits once, monitor them for any other symptoms. If it continues or they show signs of distress, contact your vet immediately.
+        </div>
+    </div>
+
+    <!-- Additional QA Boxes -->
+    <div class="qa-box">
+        <div class="question">Q: What should I do if my dog is having diarrhea?</div>
+        <div class="answer">
+            A: Monitor your dog closely. Ensure they have plenty of fresh water and consider a bland diet. If diarrhea persists or worsens, consult your vet.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How often should I take my dog for a walk?</div>
+        <div class="answer">
+            A: Generally, dogs need at least 30 minutes to an hour of exercise each day. This can vary based on your dog's age, size, and breed.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How can I tell if my dog is overweight?</div>
+        <div class="answer">
+            A: Look for signs such as difficulty breathing, lack of energy, and difficulty moving. A vet can assess your dog's weight and give guidance on a proper diet.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What vaccinations does my dog need?</div>
+        <div class="answer">
+            A: Vaccines such as rabies, parvovirus, and distemper are essential for your dog's health. Consult your vet to establish an appropriate vaccination schedule.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How can I help my dog cope with separation anxiety?</div>
+        <div class="answer">
+            A: Gradual desensitization, creating a safe space, and using calming aids such as pheromone diffusers or anxiety wraps can help your dog feel more secure.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What food should I feed my dog?</div>
+        <div class="answer">
+            A: Choose a balanced, high-quality dog food appropriate for your dog's age, size, and activity level. Consult your vet for recommendations.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How can I stop my dog from barking excessively?</div>
+        <div class="answer">
+            A: Training, positive reinforcement, and ensuring your dog’s needs are met can help reduce excessive barking. In some cases, a professional trainer may be needed.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: What should I do if my dog has fleas?</div>
+        <div class="answer">
+            A: Use flea prevention treatments and clean your dog's bedding and environment. If the problem persists, consult your vet for treatment options.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How can I tell if my dog is dehydrated?</div>
+        <div class="answer">
+            A: Signs of dehydration include dry gums, lethargy, and loss of skin elasticity. Always provide fresh water and consult a vet if you suspect dehydration.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: How do I groom my dog?</div>
+        <div class="answer">
+            A: Regular grooming includes brushing your dog’s coat, trimming nails, and cleaning ears. The frequency and method depend on your dog's breed and coat type.
+        </div>
+    </div>
+
+    <div class="qa-box">
+        <div class="question">Q: Can I leave my dog alone at home?</div>
+        <div class="answer">
+            A: It's generally fine to leave your dog home for short periods, but for longer absences, arrange for a pet sitter or ask a friend to check on them.
+        </div>
+
+    
+    <!--Bottom Bar-->
+<!--Bottom Bar-->
+<div class="grey-2">
+    <a href="home (1).html"> <img src="img/home-svgrepo-com.png" alt="Icon 1" style="margin-bottom: 5px;"> </a>
+    <a href="messagefinal.html"> <img src="img/messages-svgrepo-com.png" alt="Icon 2" style="margin-bottom: 2px;"> </a>
+    <a href="emergencyfinal.html"> <img src="img/Artboard 4.png" alt="Icon 3" style="width: 150px; height: 150px; margin-bottom: 90px;"> <!-- This image will now be 150x150px --> </a>
+    <a href="questionsfinal.html"> <img src="img/headset-mic-1-svgrepo-com.png" alt="Icon 4"> </a>
+    <a href="profile.html"> <img src="img/profile-round-1342-svgrepo-com.png" alt="Icon 5" style="width: 60px; height: 60px;"> <!-- Resized to 60x60px --> </a>
+ </div>
+    </div>
+</body>
+
+</html>

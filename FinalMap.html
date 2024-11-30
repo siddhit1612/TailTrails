@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 90vh;
+            width: 100%;
+        }
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px; /* Adjusted height for smaller top bar */
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .header .back-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+        .header h1 {
+            margin: 0 0 0 15px;
+            font-size: 40px; /* Adjusted text size for consistency */
+            font-weight: normal;
+            color: #333;
+        }
+        .details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .details .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .details .info .left {
+            font-size: 35px;
+        }
+        .details .info .right {
+            font-size: 30px;
+            color: gray;
+        }
+        .call-btn {
+            margin-top: 10px;
+            display: inline-block;
+            width: 100%;
+            background-color: #ffdc00;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="home.html" style="text-decoration: none;">
+      <img src="images/back.png" width="20px">
+   </a>
+        <h1>MAP</h1>
+    </div>
+    <div id="map"></div>
+<div class="details">
+        <div class="info">
+            <div class="left">
+                <strong>Peta India</strong><br>
+                Andheri West (Mumbai, Maharashtra)
+            </div>
+            <div class="right">
+                5 min (1 km) <br>
+                Weather: Sunny ☀️
+            </div>
+        </div>
+        <a href="tel:8617288849" class="call-btn">Call</a>
+    </div>
+
+    <script>
+        // Back button functionality
+        function goBack() {
+            window.history.back();
+        }
+
+        // Initialize the map
+        const map = L.map('map').setView([19.1197, 72.8467], 12); // Centered on Andheri West
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define black icon for markers with increased size
+        const blackIcon = L.icon({
+            iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', // Black marker icon
+            iconSize: [90, 90], // Adjust size here (width, height)
+            iconAnchor: [25, 50], // Adjust anchor point
+            popupAnchor: [0, -50] // Popup position relative to marker
+        });
+
+        // Marker data with new locations
+        const markers = [
+            {
+                coords: [19.1197, 72.8467], // Andheri West
+                name: "Peta India",
+                address: "Andheri West, Mumbai, Maharashtra",
+                time: "5 min (1 km)",
+                weather: "Sunny ☀️",
+                phone: "8617288849",
+            },
+            {
+                coords: [19.0176, 72.8471], // Helping Hands Animal Welfare Foundation
+                name: "Helping Hands Animal Welfare Foundation",
+                address: "Mumbai, Maharashtra",
+                time: "15 min (5 km)",
+                weather: "Cloudy ☁️",
+                phone: "9876543210",
+            },
+            {
+                coords: [19.2579, 72.8682], // Animal Matter To Me (AMTM)
+                name: "Animal Matter To Me (AMTM) - Animal Hospital",
+                address: "Malad West, Mumbai, Maharashtra",
+                time: "25 min (12 km)",
+                weather: "Sunny ☀️",
+                phone: "9123456789",
+            },
+        ];
+
+        // Reference to the details section
+        const details = document.querySelector('.details');
+
+        // Function to update details section
+        function updateDetails(marker) {
+            details.querySelector('.left').innerHTML = `<strong>${marker.name}</strong><br>${marker.address}`;
+            details.querySelector('.right').innerHTML = `${marker.time} <br> Weather: ${marker.weather}`;
+            details.querySelector('.call-btn').href = `tel:${marker.phone}`;
+        }
+
+        // Add markers to the map
+        markers.forEach((marker) => {
+            const mapMarker = L.marker(marker.coords, { icon: blackIcon }).addTo(map);
+            mapMarker.on('click', () => updateDetails(marker));
+        });
+
+        // Default details are set for the first marker
+        updateDetails(markers[0]);
+    </script>
+</body>
+</html>
